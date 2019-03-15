@@ -1,7 +1,7 @@
 # meta file for git-lfs-bitbucket-media-api
 ---
 galaxy_info:
-  role_name: ant
+  role_name: git-lfs-bitbucket-media-api
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Set up (the latest or a specific version of) Git LFS Custom Adapter for Bitbucket in Debian-like systems
