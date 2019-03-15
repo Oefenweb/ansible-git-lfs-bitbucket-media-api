@@ -1,0 +1,13 @@
+# vars file for git-lfs-bitbucket-media-api
+---
+git_lfs_bitbucket_media_api_dependencies:
+  - curl
+  - unzip
+  - git
+git_lfs_bitbucket_media_api_downloads_path: /var/lib/ansible/git-lfs-bitbucket-media-api/downloads
+git_lfs_bitbucket_media_api_builds_path: /var/lib/ansible/git-lfs-bitbucket-media-api/builds
+git_lfs_bitbucket_media_api_machine_map:
+  i686: 386
+  i386: 386
+  x86_64: amd64
+  amd64: amd64

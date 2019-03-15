@@ -1,0 +1,7 @@
+# test file for git-lfs-bitbucket-media-api
+---
+- hosts: localhost
+  connection: local
+  become: true
+  roles:
+    - ../../
