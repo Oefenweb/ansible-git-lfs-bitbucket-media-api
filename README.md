@@ -1,4 +1,4 @@
-## ant
+## git-lfs-bitbucket-media-api
 
 [![Build Status](https://travis-ci.org/Oefenweb/ansible-git-lfs-bitbucket-media-api.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-git-lfs-bitbucket-media-api) 
 [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-git--lfs--bitbucket--media--api-blue.svg)](https://galaxy.ansible.com/Oefenweb/git-lfs-bitbucket-media-api)
