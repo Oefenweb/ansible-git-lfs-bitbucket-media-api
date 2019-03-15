@@ -1,0 +1,23 @@
+# meta file for git-lfs-bitbucket-media-api
+---
+galaxy_info:
+  role_name: ant
+  author: Mischa ter Smitten
+  company: Oefenweb.nl B.V.
+  description: Set up (the latest or a specific version of) Git LFS Custom Adapter for Bitbucket in Debian-like systems
+  license: MIT
+  min_ansible_version: 2.5.0.0
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
+        - bionic
+    - name: Debian
+      versions:
+        - jessie
+        - stretch
+  galaxy_tags:
+    - development
+    - system
+dependencies: []

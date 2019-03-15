@@ -1,0 +1,81 @@
+# tasks file for git-lfs-bitbucket-media-api
+---
+- name: install dependencies
+  apt:
+    name: "{{ git_lfs_bitbucket_media_api_dependencies }}"
+    state: "{{ apt_install_state | default('latest') }}"
+    update_cache: true
+    cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
+  tags:
+    - configuration
+    - git-lfs-bitbucket-media-api
+    - git-lfs-bitbucket-media-api-dependencies
+
+- name: create directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+  with_items:
+    - "{{ git_lfs_bitbucket_media_api_downloads_path }}"
+    - "{{ git_lfs_bitbucket_media_api_builds_path }}/{{ git_lfs_bitbucket_media_api_version }}"
+  tags:
+    - configuration
+    - git-lfs-bitbucket-media-api
+    - git-lfs-bitbucket-media-api-directories
+    - git-lfs-bitbucket-media-api-directories-create
+
+- name: download
+  command: >
+    curl -sSL
+    https://downloads.atlassian.com/software/bitbucket/GitLfsBitbucketAdapter-linux-{{ git_lfs_bitbucket_media_api_machine_map[ansible_machine] }}-{{ git_lfs_bitbucket_media_api_version }}.zip
+    -o {{ git_lfs_bitbucket_media_api_downloads_path }}/{{ git_lfs_bitbucket_media_api_version }}.zip
+  args:
+    creates: "{{ git_lfs_bitbucket_media_api_downloads_path }}/{{ git_lfs_bitbucket_media_api_version }}.zip"
+  tags:
+    - configuration
+    - git-lfs-bitbucket-media-api
+    - git-lfs-bitbucket-media-api-download
+
+- name: unzip
+  unarchive:
+    src: "{{ git_lfs_bitbucket_media_api_downloads_path }}/{{ git_lfs_bitbucket_media_api_version }}.zip"
+    dest: "{{ git_lfs_bitbucket_media_api_builds_path }}/{{ git_lfs_bitbucket_media_api_version }}"
+    creates: "{{ git_lfs_bitbucket_media_api_builds_path }}/{{ git_lfs_bitbucket_media_api_version }}/git-lfs-bitbucket-media-api"
+    copy: false
+  tags:
+    - configuration
+    - git-lfs-bitbucket-media-api
+    - git-lfs-bitbucket-media-api-unzip
+
+- name: install
+  file:
+    src: "{{ git_lfs_bitbucket_media_api_builds_path }}/{{ git_lfs_bitbucket_media_api_version }}/git-lfs-bitbucket-media-api"
+    dest: "{{ git_lfs_bitbucket_media_api_install_prefix }}/git-lfs-bitbucket-media-api"
+    state: link
+    force: true
+  tags:
+    - git-lfs-bitbucket-media-api-install-install
+    - git-lfs-bitbucket-media-api-install-install-symlink
+
+- name: configure
+  git_config:
+    name: lfs.customtransfer.bitbucket-media-api.path
+    scope: system
+    value: "{{ git_lfs_bitbucket_media_api_install_prefix }}/git-lfs-bitbucket-media-api"
+  tags:
+    - git-lfs-bitbucket-media-api-install-configure
+
+- name: verify
+  command: >
+    {{ git_lfs_bitbucket_media_api_install_prefix }}/git-lfs-bitbucket-media-api --version
+  register: _verify_version
+  failed_when: "git_lfs_bitbucket_media_api_version not in _verify_version.stdout"
+  changed_when: false
+  tags:
+    - configuration
+    - git-lfs-bitbucket-media-api
+    - git-lfs-bitbucket-media-api-install
+    - git-lfs-bitbucket-media-api-install-verify
