@@ -57,6 +57,8 @@
     state: link
     force: true
   tags:
+    - configuration
+    - git-lfs-bitbucket-media-api
     - git-lfs-bitbucket-media-api-install-install
     - git-lfs-bitbucket-media-api-install-install-symlink
 
