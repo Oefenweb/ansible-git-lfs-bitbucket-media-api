@@ -34,6 +34,7 @@
     -o {{ git_lfs_bitbucket_media_api_downloads_path }}/{{ git_lfs_bitbucket_media_api_version }}.zip
   args:
     creates: "{{ git_lfs_bitbucket_media_api_downloads_path }}/{{ git_lfs_bitbucket_media_api_version }}.zip"
+    warn: false
   tags:
     - configuration
     - git-lfs-bitbucket-media-api
