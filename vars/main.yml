@@ -1,4 +1,4 @@
-# vars file for git-lfs-bitbucket-media-api
+# vars file
 ---
 git_lfs_bitbucket_media_api_dependencies:
   - curl

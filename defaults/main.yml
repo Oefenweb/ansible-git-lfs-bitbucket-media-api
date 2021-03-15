@@ -1,4 +1,4 @@
-# defaults file for git-lfs-bitbucket-media-api
+# defaults file
 ---
 git_lfs_bitbucket_media_api_version: 1.0.6
 git_lfs_bitbucket_media_api_install_prefix: /usr/local/bin

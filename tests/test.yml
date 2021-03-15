@@ -1,4 +1,4 @@
-# test file for git-lfs-bitbucket-media-api
+# test file
 ---
 - hosts: localhost
   connection: local
