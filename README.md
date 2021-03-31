@@ -1,7 +1,7 @@
 ## git-lfs-bitbucket-media-api
 
 [![CI](https://github.com/Oefenweb/ansible-git-lfs-bitbucket-media-api/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-git-lfs-bitbucket-media-api/actions?query=workflow%3ACI)
-[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-git--lfs--bitbucket--media--api-blue.svg)](https://galaxy.ansible.com/Oefenweb/git-lfs-bitbucket-media-api)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-git--lfs--bitbucket--media--api-blue.svg)](https://galaxy.ansible.com/Oefenweb/git_lfs_bitbucket_media_api)
 
 Set up (the latest or a specific version of) [Git LFS Custom Adapter for Bitbucket](https://confluence.atlassian.com/bitbucket/bitbucket-lfs-media-adapter-856699998.html) in Debian-like systems.
 
