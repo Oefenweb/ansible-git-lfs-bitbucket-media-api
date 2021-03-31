@@ -2,7 +2,7 @@
 ---
 galaxy_info:
   namespace: oefenweb
-  role_name: git-lfs-bitbucket-media-api
+  role_name: git_lfs_bitbucket_media_api
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Set up (the latest or a specific version of) Git LFS Custom Adapter for Bitbucket in Debian-like systems
