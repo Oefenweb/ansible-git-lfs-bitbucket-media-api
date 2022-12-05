@@ -27,14 +27,13 @@
     - git-lfs-bitbucket-media-api-directories
     - git-lfs-bitbucket-media-api-directories-create
 
-- name: download
+- name: download  # noqa command-instead-of-module
   ansible.builtin.command: >
     curl -sSL
     https://downloads.atlassian.com/software/bitbucket/GitLfsBitbucketAdapter-linux-{{ git_lfs_bitbucket_media_api_machine_map[ansible_machine] }}-{{ git_lfs_bitbucket_media_api_version }}.zip
     -o {{ git_lfs_bitbucket_media_api_downloads_path }}/{{ git_lfs_bitbucket_media_api_version }}.zip
   args:
     creates: "{{ git_lfs_bitbucket_media_api_downloads_path }}/{{ git_lfs_bitbucket_media_api_version }}.zip"
-    warn: false
   tags:
     - configuration
     - git-lfs-bitbucket-media-api
