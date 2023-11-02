@@ -30,7 +30,7 @@ None
 ---
 - hosts: all
   roles:
-    - git-lfs-bitbucket-media-api
+    - oefenweb.git-lfs-bitbucket-media-api
 ```
 
 #### License
