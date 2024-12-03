@@ -17,7 +17,7 @@
     state: directory
     owner: root
     group: root
-    mode: 0755
+    mode: '0755'
   with_items:
     - "{{ git_lfs_bitbucket_media_api_downloads_path }}"
     - "{{ git_lfs_bitbucket_media_api_builds_path }}/{{ git_lfs_bitbucket_media_api_version }}"
